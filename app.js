@@ -62,45 +62,42 @@ books=[
             distributorName:"H&C Books",
             price:1090,
             Description:"Poems"
-        },
-        {
-            title:"War and Peace",
-            author:"Leo Tolstoy",
-            publisher:"pearson",
-            date_of_publication:"1958",
-            distributorName:"H&C Books",
-            price:670,
-            Description:"Real world story"
-    
-        },
-        {
-            title:"Leo Tolstoy",
-            author:"Homer",
-            publisher:"pearson Books",
-            date_of_publication:"1973",
-            distributorName:"H&C Books",
-            price:380,
-            Description:"story"
-    
-        },
-        {
-            title:"Madme Bovery",
-            author:"Gustave Flaubert",
-            publisher:"pearson Books",
-            date_of_publication:"1944",
-            distributorName:"H&C Books",
-            price:980,
-            Description:"Novel"
-        },
-        {
-            title:"The Divine Comedy",
-            author:"Dante alighieri",
-            publisher:"Pearson Books",
-            date_of_publication:"1973",
-            distributorName:"H&C Books",
-            price:650,
-            Description:"Novel"
-    },];
+        },];
+        a=[
+            {
+                AuthorName:'marcel proust',
+                image: '/image/a.jpg',
+                dob:'12-12-1870',
+                place:'america'
+            },
+            {
+                AuthorName:'Don Quixote',
+                image:"/image/f.jpg",
+                dob:'12-09-1870',
+                place:'america'
+            },
+            {
+                AuthorName:'James Joyces',
+                image:"/image/b.jpg",
+                dob:'10-09-1870',
+                place:'europe'
+            },{
+                AuthorName:'F.schoot',
+                image:"/image/c.jpg",
+                dob:'10-09-1860',
+                place:'singapore'
+            },{
+                AuthorName:'Herman Melville',
+                image:"/image/d.jpg",
+                dob:'1-09-1879',
+                place:'new york'
+            },{
+                AuthorName:'William Shakesphere',
+                image:"/image/e.jpg",
+                dob:'11-03-1871',
+                place:'london'
+            },
+        ];
 
 
 app.get('/readmore/:id',(req,res)=>{
@@ -115,6 +112,16 @@ app.get('/readmore/:id',(req,res)=>{
 })
 
 
+app.get('/authors1/:id',(req,res)=>{
+
+    const x=req.params.id;
+    res.render('authors1',{'a': a[x],
+
+    navbarrr:[{link:'/books',title:'books'},{link:'/authors',title:'authors'}],
+
+    title:'Library'}   )
+
+})
 
 
 
@@ -131,6 +138,9 @@ app.get('/',(req,res)=>{
 })
 app.get('/books',(req,res)=>{
     res.render('books',{ navbarrr:[{link:'/books',title:'books'},{link:'/authors',title:'authors'}],title:'books',books:books})
+})
+app.get('/authors',(req,res)=>{
+    res.render('author',{ navbarrr:[{link:'/books',title:'books'},{link:'/authors',title:'authors'}],title:'authors',a:a})
 })
 app.listen(process.env.PORT || 3004,()=>{
     console.log("server is running on http://localhost:3004")
