@@ -187,7 +187,7 @@ app.get('/readmore/:id',(req,res)=>{
     var id=req.params.id;
 
 
-    const ApiUrl="http://localhost:3004/singlebookFetchApi/"+id;
+    const ApiUrl="https://libmanage.herokuapp.com/singlebookFetchApi/"+id;
 
    
 request(ApiUrl,(error,response,body)=>{
@@ -228,7 +228,7 @@ app.get('/',(req,res)=>{
 
 app.get('/books',(req,res)=>{
 
-    const viewall="http://localhost:3004/viewall"
+    const viewall="https://libmanage.herokuapp.com/viewall"
 
 
 
