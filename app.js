@@ -15,7 +15,10 @@ const   LibModel=Mongoose.model("libraries",{
     
     
 });
-Mongoose.connect("mongodb://localhost:27017/library")
+//Mongoose.connect("mongodb://localhost:27017/library")
+
+Mongoose.connect("mongodb+srv://sharmi1998:sharmi1998@cluster0-rwxfj.mongodb.net/test?retryWrites=true&w=majority")
+
 app.post('/read',(req,res)=>{
 
     console.log('test')
