@@ -39,7 +39,7 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav"> 
-                    <% for(var i=0;i<navbarr.length;i++) { %>
+                    <% for(var i=0;i<navbarrr.length;i++) { %>
    
                             <li>
                                     <a href=<%=navbarrr[i].link %> </a><%= navbarrr[i].title %></a>
@@ -118,15 +118,14 @@
               <div class="row">    
                 <br>
                 <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="<%= a.image %>" style="width:100px;height:100px" class="img-circle"></a>
+                  <a class="story-title" href="#"><img alt="" src="<%= author.image %>" style="width:100px;height:100px" class="img-circle"></a>
                 </div>
                 <div class="col-md-10 col-sm-9">
-                  <h3><%= a.AuthorName%></h3>
+                  <h3><%= author.name%></h3>
                   <div class="row">
                     <div class="col-xs-9">
-                      <!-- <h4><span class="label label-default"><%= a.image %></span></h4><h4> -->
-                      <small style="font-family:courier,'new courier';" class="text-muted"><%= a.dob %></a></small>
-                      <br><small style="font-family:courier,'new courier';" class="text-muted"><%= a.place %></a></small>
+                      <small style="font-family:courier,'new courier';" class="text-muted"><%= author.dob %></a></small>
+                      <br><small style="font-family:courier,'new courier';" class="text-muted"><%= author.place %></a></small>
                       </h4></div>
 
 
